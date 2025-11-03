@@ -1,0 +1,27 @@
+<div id="create_body">
+  <div class="flex">
+    <div class="container">
+      <div class="view_grid">
+        <div class="view_post_container">
+          <div class="view_post">
+            <h2><%- post.title %></h2>
+            <div class="view_post_details">
+              <p>Posted: <%- post.created.toLocaleString("en-GB") %></p>
+              <p>Views: <%- new Intl.NumberFormat().format(post.views) %></p>
+              <% if (post.lastEdited) { %>
+                <p class="edited">Edited: <%- post.lastEdited.toLocaleString("en-GB") %></p>
+              <% } %>
+            </div>
+            <p class="post_body"><%- post.postBody %></p>
+          </div>
+        </div>
+        <div class="post_controls_container">
+          <div class="post_controls">
+            <a class="button edit" href="/edit/<%- post.id %>">Edit</a>
+            <a class="button delete" href="/delete/<%- post.id %>">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

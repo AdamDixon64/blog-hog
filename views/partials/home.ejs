@@ -1,0 +1,33 @@
+<div id="home_body">
+  <div class="flex">
+    <div class="container">
+      <div class="home_container_grid">
+        <div class="top_posts">
+          <div class="headline_top">
+              <h2>Top Weekly Posts</h2>  
+          </div>
+          <% topPosts.forEach((topPost) => { %>
+            <div class="headline">
+              <h2><a href="/post/<%- topPost.id %>"><%- topPost.title %></a></h2>
+              <div class="post_details">
+                <p>Views: <%- new Intl.NumberFormat().format(topPost.views) %></p>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        <div class="post_feed">
+          <% posts.forEach((post) => { %>
+            <div class="post">
+              <h2><a href="/post/<%- post.id %>"><%- post.title %></a></h2>
+              <div class="post_details">
+                <p><%- post.created.toLocaleDateString("en-GB") %></p>
+                <p>Views: <%- new Intl.NumberFormat().format(post.views) %></p>
+              </div>
+              <p class="post_body"><%- post.postBody.slice(0, 200) %> ...</p>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
