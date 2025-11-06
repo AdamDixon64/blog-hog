@@ -1,7 +1,13 @@
 # blog-hog
 
+### How to run project
+Install required packages:
+```
 npm install
-
+```
+Start the server:
+```
 node index.js
-
-http://localhost:3000/
+```
+Access locally from:\
+http://localhost:3000
